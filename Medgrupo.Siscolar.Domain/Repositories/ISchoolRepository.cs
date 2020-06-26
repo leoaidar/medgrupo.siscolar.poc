@@ -8,7 +8,7 @@ namespace Medgrupo.Siscolar.Domain.Repositories
     {
         void Create(School school);
         void Update(School school);
-        TodoItem GetById(Guid id);
+        School GetById(Guid id);
         IEnumerable<School> GetAll();
 
     }
