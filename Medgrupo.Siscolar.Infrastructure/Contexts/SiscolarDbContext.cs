@@ -1,4 +1,6 @@
 using Medgrupo.Siscolar.Domain.Entities;
+using Medgrupo.Siscolar.Infrastructure.Data.Mappings;
+using Medgrupo.Siscolar.Infrastructure.Data.Seeds;
 using Microsoft.EntityFrameworkCore;
 
 namespace Medgrupo.Siscolar.Infrastructure.Contexts
@@ -14,9 +16,8 @@ namespace Medgrupo.Siscolar.Infrastructure.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<School>().ToTable("School");
-            modelBuilder.Entity<School>().Property(x => x.Id);
-            modelBuilder.Entity<School>().Property(x => x.Name).HasMaxLength(160).HasColumnType("varchar(255)");
+            modelBuilder.ApplyConfiguration(new SchoolMap());
+            modelBuilder.Entity<School>().HasData(SchoolSeedData.Seed());
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
