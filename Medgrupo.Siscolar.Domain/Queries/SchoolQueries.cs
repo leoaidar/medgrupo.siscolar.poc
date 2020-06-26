@@ -6,7 +6,7 @@ namespace Medgrupo.Siscolar.Domain.Queries
 {
     public static class SchoolQueries
     {
-        public static Expression<Func<TodoItem, bool>> GetAll()
+        public static Expression<Func<School, bool>> GetAll()
         {
             return x => x.Id != null;
         }
