@@ -12,6 +12,12 @@ namespace Medgrupo.Siscolar.Infrastructure.Data.Mappings
             builder.ToTable("School");
             builder.Property(x => x.Id);
             builder.Property(x => x.Name).HasMaxLength(160).HasColumnType("varchar(255)");
+            builder.Property(x => x.MaxSchoolClass).IsRequired();
+            builder.Property(x => x.MaxSchoolStudents).IsRequired();
+            builder.Property(x => x.SchoolPrincipal).IsRequired().HasMaxLength(120).HasColumnType("varchar(120)");
+            builder.Property(x => x.CreateDate).IsRequired().HasDefaultValueSql("GetDate()");
+            builder.Property(x => x.LastUpdateDate).IsRequired();
+
         }
         
     }

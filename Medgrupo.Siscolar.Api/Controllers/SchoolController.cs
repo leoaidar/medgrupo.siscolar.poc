@@ -6,6 +6,7 @@ using Medgrupo.Siscolar.Domain.Entities;
 using Medgrupo.Siscolar.Domain.Handlers;
 using Medgrupo.Siscolar.Domain.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 
 namespace Medgrupo.Siscolar.Api.Controllers
 {

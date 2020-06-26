@@ -20,12 +20,12 @@ namespace Medgrupo.Siscolar.Infrastructure.Contexts
             modelBuilder.Entity<School>().HasData(SchoolSeedData.Seed());
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-           if (!optionsBuilder.IsConfigured)
-           {
-               optionsBuilder.UseSqlServer("Server=localhost,1433;Database=SiscolarDB;User ID=SA;Password=Mudar@4321;MultipleActiveResultSets=true;");
-           }
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //   if (!optionsBuilder.IsConfigured)
+        //   {
+        //       optionsBuilder.UseSqlServer("Server=localhost,1433;Database=SiscolarDB;User ID=SA;Password=Mudar@4321;MultipleActiveResultSets=true;");
+        //   }
+        //}
     }
 }

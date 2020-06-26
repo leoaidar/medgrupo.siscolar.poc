@@ -23,14 +23,14 @@ namespace Medgrupo.Siscolar.Domain.Handlers
             command.Validate();
             if (command.Invalid)
                 return new GenericCommandResult(false, "Ops, parece que os dados da escola estão errados!", command.Notifications);
-                        
-            var school = new School(command.Name);
+
+            var school = new School(command.Name, command.MaxSchoolClass, command.MaxSchoolStudents, command.SchoolPrincipal);
 
             // Salva no banco
             _repository.Create(school);
 
             // Retorna o resultado
-            return new GenericCommandResult(true, "Escola salva", school);
+            return new GenericCommandResult(true, "Escola salva com sucesso!", school);
         }
 
     }
