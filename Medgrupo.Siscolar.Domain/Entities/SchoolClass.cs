@@ -52,6 +52,8 @@ namespace Medgrupo.Siscolar.Domain.Entities
 
         private void GenerateSchoolClassCode()
         {
+            if (SchoolClassCode != null) return;
+
             string secondDataGuid = Id.ToString().Split('-')[1];
             string firstLetterShift = Shift.Substring(0, 1);
             string shortYear = SchoolYear.ToString().Substring(2, 2);
