@@ -42,5 +42,14 @@ namespace Medgrupo.Siscolar.Api.Controllers
             return (GenericCommandResult)handler.Handle(command);
         }
 
+        [HttpDelete]
+        public GenericCommandResult Delete(
+           [FromBody] DeleteSchoolCommand command,
+           [FromServices] SchoolHandler handler
+        )
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
     }
 }

@@ -39,7 +39,7 @@ namespace Medgrupo.Siscolar.Domain.Handlers
             if (command.Invalid)
                 return new GenericCommandResult(false, "Ops, parece que os dados da escola estão errados!", command.Notifications);
 
-            // Recupera o TodoItem (Rehidratação)
+            // Recupera 
             var school = _repository.GetById(command.Id);
 
             // modificacoes
@@ -55,6 +55,21 @@ namespace Medgrupo.Siscolar.Domain.Handlers
             return new GenericCommandResult(true, "Escola salva com sucesso!", school);
         }
 
+        public ICommandResult Handle(DeleteSchoolCommand command)
+        {
+            command.Validate();
+            if (command.Invalid)
+                return new GenericCommandResult(false, "Ops, parece que os dados da escola estão errados!", command.Notifications);
+
+            // Recupera 
+            var school = _repository.GetById(command.Id);
+            
+            // apaga no banco
+            _repository.Delete(school);
+
+            // Retorna o resultado
+            return new GenericCommandResult(true, "Escola apagada com sucesso!", school);
+        }
 
 
 

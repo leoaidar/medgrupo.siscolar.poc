@@ -30,7 +30,7 @@ namespace Medgrupo.Siscolar.Domain.Commands
             AddNotifications(
                 new Contract()
                     .Requires()
-                    .IsNotEmpty(Id,"Id","Escola sem idenficador!")
+                    .IsNotEmpty(Id,"Id", "Escola sem identificador!")
                     .HasMinLen(Name, 6, "Name", "Por favor, digite o nome da escola!")
                     .HasMinLen(SchoolPrincipal, 3, "SchoolPrincipal", "Por favor, digite o nome do diretor da escola!")
             );

@@ -29,8 +29,6 @@ namespace Medgrupo.Siscolar.Infra.Repositories
             return _ctx.Schools;
         }
 
-     
-
         public School GetById(Guid id)
         {
             return _ctx
@@ -44,5 +42,10 @@ namespace Medgrupo.Siscolar.Infra.Repositories
             _ctx.SaveChanges();
         }
 
+        public void Delete(School school)
+        {
+            _ctx.Schools.Remove(school);
+            _ctx.SaveChanges();
+        }
     }
 }

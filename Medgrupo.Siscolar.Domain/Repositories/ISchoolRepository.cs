@@ -10,6 +10,6 @@ namespace Medgrupo.Siscolar.Domain.Repositories
         void Update(School school);
         School GetById(Guid id);
         IEnumerable<School> GetAll();
-
+        void Delete(School school);
     }
 }
