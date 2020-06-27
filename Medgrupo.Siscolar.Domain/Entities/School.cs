@@ -23,12 +23,16 @@ namespace Medgrupo.Siscolar.Domain.Entities
 
         public void UpdateName(string name)
         {
+            if (Name.Equals(name)) return;
+
             Name = name;
             EntityModified();
         }
 
         public void ChangeSchoolPrincipal(string schoolPrincipal)
         {
+            if (SchoolPrincipal.Equals(schoolPrincipal)) return;
+
             SchoolPrincipal = schoolPrincipal;
             EntityModified();
         }
@@ -36,6 +40,22 @@ namespace Medgrupo.Siscolar.Domain.Entities
         public void EntityModified()
         {
             LastUpdateDate = DateTime.Now;
+        }
+
+        public void SetMaximumSchoolClass(int maxSchoolClass)
+        {
+            if (MaxSchoolClass.Equals(maxSchoolClass)) return;
+
+            MaxSchoolClass = maxSchoolClass;
+            EntityModified();
+        }
+
+        public void SetMaximumSchoolStudents(int maxSchoolStudents)
+        {
+            if (MaxSchoolStudents.Equals(maxSchoolStudents)) return;
+
+            MaxSchoolStudents = maxSchoolStudents;
+            EntityModified();
         }
     }
 }

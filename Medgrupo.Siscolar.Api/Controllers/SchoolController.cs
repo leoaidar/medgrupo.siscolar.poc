@@ -32,5 +32,15 @@ namespace Medgrupo.Siscolar.Api.Controllers
             return (GenericCommandResult)handler.Handle(command);
         }
 
+        
+        [HttpPut]
+        public GenericCommandResult Update(
+           [FromBody] UpdateSchoolCommand command,
+           [FromServices] SchoolHandler handler
+        )
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
     }
 }
