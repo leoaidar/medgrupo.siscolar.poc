@@ -17,6 +17,7 @@ namespace Medgrupo.Siscolar.Infra.Data.Mappings
             builder.Property(x => x.Shift).IsRequired().HasMaxLength(50).HasColumnType("varchar(50)");
             builder.Property(x => x.CreateDate).IsRequired().HasDefaultValueSql("GetDate()");
             builder.Property(x => x.LastUpdateDate).IsRequired();
+            builder.HasOne(x => x.School).WithMany(x => x.SchoolClasses);
         }
         
     }

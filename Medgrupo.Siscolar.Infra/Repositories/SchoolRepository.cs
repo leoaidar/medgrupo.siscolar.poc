@@ -26,7 +26,9 @@ namespace Medgrupo.Siscolar.Infra.Repositories
 
         public IEnumerable<School> GetAll()
         {
-            return _ctx.Schools;
+            return _ctx.Schools
+                    .AsNoTracking()
+                    .ToList();
         }
 
         public School GetById(Guid id)

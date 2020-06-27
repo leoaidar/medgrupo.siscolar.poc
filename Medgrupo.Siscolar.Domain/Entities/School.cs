@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Medgrupo.Siscolar.Domain.Entities
 {
@@ -19,6 +20,7 @@ namespace Medgrupo.Siscolar.Domain.Entities
         public string SchoolPrincipal { get; private set; }
         public DateTime CreateDate { get; private set; }
         public DateTime LastUpdateDate { get; private set; }
+        public IEnumerable<SchoolClass> SchoolClasses { get; private set; }
 
 
         public void UpdateName(string name)

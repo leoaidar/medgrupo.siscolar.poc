@@ -19,6 +19,8 @@ namespace Medgrupo.Siscolar.Domain.Entities
         public string SchoolClassCode { get; private set; }
         public DateTime CreateDate { get; private set; }
         public DateTime LastUpdateDate { get; private set; }
+        public int SchoolId { get; private set; }
+        public School School { get; private set; }
 
 
         public void UpdateName(string name)

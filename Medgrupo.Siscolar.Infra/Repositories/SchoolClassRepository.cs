@@ -26,13 +26,18 @@ namespace Medgrupo.Siscolar.Infra.Repositories
 
         public IEnumerable<SchoolClass> GetAll()
         {
-            return _ctx.SchoolClasses;
+            return _ctx
+                    .SchoolClasses
+                    .Include(x => x.School)
+                    .AsNoTracking()
+                    .ToList();
         }
 
         public SchoolClass GetById(Guid id)
         {
             return _ctx
                 .SchoolClasses
+                .Include(x => x.School)
                 .FirstOrDefault(SchoolClassQueries.GetById(id));
         }
 
@@ -47,5 +52,6 @@ namespace Medgrupo.Siscolar.Infra.Repositories
             _ctx.SchoolClasses.Remove(schoolClass);
             _ctx.SaveChanges();
         }
+
     }
 }
