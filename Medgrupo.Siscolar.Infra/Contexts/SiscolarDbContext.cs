@@ -19,9 +19,10 @@ namespace Medgrupo.Siscolar.Infra.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new SchoolMap());
-            modelBuilder.Entity<School>().HasData(SchoolSeedData.Seed());
+            var schoolSeed = SchoolSeedData.Seed();
+            modelBuilder.Entity<School>().HasData(schoolSeed);
             modelBuilder.ApplyConfiguration(new SchoolClassMap());
-            modelBuilder.Entity<SchoolClass>().HasData(SchoolClassSeedData.Seed());
+            modelBuilder.Entity<SchoolClass>().HasData(SchoolClassSeedData.Seed(schoolSeed));
         }        
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

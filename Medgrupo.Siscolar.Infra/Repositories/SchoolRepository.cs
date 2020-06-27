@@ -49,5 +49,15 @@ namespace Medgrupo.Siscolar.Infra.Repositories
             _ctx.Schools.Remove(school);
             _ctx.SaveChanges();
         }
+
+        public School GetByIdWithSchoolClasses(Guid id)
+        {
+            return _ctx
+                .Schools
+                .Include(x=>x.SchoolClasses)
+                .Where(SchoolQueries.GetByIdWithSchoolClasses(id))
+                .FirstOrDefault(SchoolQueries.GetById(id));
+        }
+
     }
 }

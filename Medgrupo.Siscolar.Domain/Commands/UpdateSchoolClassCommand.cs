@@ -9,7 +9,7 @@ namespace Medgrupo.Siscolar.Domain.Commands
     {
         public UpdateSchoolClassCommand() { }
 
-        public UpdateSchoolClassCommand(Guid id, string name, int schoolYear, string shift)
+        public UpdateSchoolClassCommand(Guid id,string name, int schoolYear, string shift)
         {
             Id = id;
             Name = name;
@@ -21,7 +21,6 @@ namespace Medgrupo.Siscolar.Domain.Commands
         public string Name { get; set; }
         public int SchoolYear { get; set; }
         public string Shift { get; set; }
-
 
         public void Validate()
         {

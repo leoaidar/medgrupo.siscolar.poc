@@ -11,5 +11,7 @@ namespace Medgrupo.Siscolar.Domain.Repositories
         School GetById(Guid id);
         IEnumerable<School> GetAll();
         void Delete(School school);
+        School GetByIdWithSchoolClasses(Guid id);
+        
     }
 }

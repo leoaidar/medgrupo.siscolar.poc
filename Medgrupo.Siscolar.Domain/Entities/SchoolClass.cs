@@ -4,12 +4,13 @@ namespace Medgrupo.Siscolar.Domain.Entities
 {
     public class SchoolClass : Entity
     {
-        public SchoolClass(string name, int schoolYear, string shift)
+        public SchoolClass(string name, int schoolYear, string shift, Guid schoolId)
         {
             Name = name;
             SchoolYear = schoolYear;
             Shift = shift;
             CreateDate = LastUpdateDate = DateTime.Now;
+            SchoolId = schoolId;
             GenerateSchoolClassCode();
         }
 
@@ -19,7 +20,7 @@ namespace Medgrupo.Siscolar.Domain.Entities
         public string SchoolClassCode { get; private set; }
         public DateTime CreateDate { get; private set; }
         public DateTime LastUpdateDate { get; private set; }
-        public int SchoolId { get; private set; }
+        public Guid SchoolId { get; private set; }
         public School School { get; private set; }
 
 

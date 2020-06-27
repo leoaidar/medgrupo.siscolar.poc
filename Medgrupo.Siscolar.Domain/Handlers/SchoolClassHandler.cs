@@ -28,7 +28,7 @@ namespace Medgrupo.Siscolar.Domain.Handlers
             if (command.Invalid)
                 return new GenericCommandResult(false, _genericErrorText, command.Notifications);
 
-            var schoolClass = new SchoolClass(command.Name, command.SchoolYear, command.Shift);
+            var schoolClass = new SchoolClass(command.Name, command.SchoolYear, command.Shift, command.SchoolId);
 
             // Salva no banco
             _repository.Create(schoolClass);
