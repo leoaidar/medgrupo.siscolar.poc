@@ -20,6 +20,8 @@ namespace Medgrupo.Siscolar.Infra.Contexts
         {
             modelBuilder.ApplyConfiguration(new SchoolMap());
             modelBuilder.Entity<School>().HasData(SchoolSeedData.Seed());
+            modelBuilder.ApplyConfiguration(new SchoolClassMap());
+            modelBuilder.Entity<SchoolClass>().HasData(SchoolClassSeedData.Seed());
         }        
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -31,5 +33,6 @@ namespace Medgrupo.Siscolar.Infra.Contexts
         //}
 
         public DbSet<School> Schools { get; set; }
+        public DbSet<SchoolClass> SchoolClasses { get; set; }
     }
 }
