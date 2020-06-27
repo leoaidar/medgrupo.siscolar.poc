@@ -54,10 +54,10 @@ namespace Medgrupo.Siscolar.Domain.Entities
         {
             string secondDataGuid = Id.ToString().Split('-')[1];
             string firstLetterShift = Shift.Substring(0, 1);
-            string schoolYearShort = SchoolYear.ToString().Substring(2, 2);
-            string milisecondsCreation = CreateDate.Millisecond.ToString().Substring(3, 4);
+            string shortYear = SchoolYear.ToString().Substring(2, 2);
+            string lastFourMilisecondsCreation = CreateDate.Millisecond.ToString().Substring(3, 4);
 
-            string automaticSystemCode = secondDataGuid + firstLetterShift + schoolYearShort + milisecondsCreation;
+            string automaticSystemCode = secondDataGuid + firstLetterShift + shortYear + lastFourMilisecondsCreation;
 
             SchoolClassCode = automaticSystemCode;
         }
