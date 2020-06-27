@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Medgrupo.Siscolar.Infra.Contexts;
 using Medgrupo.Siscolar.Domain.Entities;
 using Medgrupo.Siscolar.Domain.Repositories;
-
+using Medgrupo.Siscolar.Domain.Queries;
 
 namespace Medgrupo.Siscolar.Infra.Repositories
 {
@@ -33,7 +33,7 @@ namespace Medgrupo.Siscolar.Infra.Repositories
         {
             return _ctx
                 .Schools
-                .FirstOrDefault(x => x.Id == id);
+                .FirstOrDefault(SchoolQueries.GetById(id));
         }
 
         public void Update(School school)
