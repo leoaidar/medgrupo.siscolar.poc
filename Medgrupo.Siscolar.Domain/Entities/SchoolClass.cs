@@ -55,9 +55,14 @@ namespace Medgrupo.Siscolar.Domain.Entities
             string secondDataGuid = Id.ToString().Split('-')[1];
             string firstLetterShift = Shift.Substring(0, 1);
             string shortYear = SchoolYear.ToString().Substring(2, 2);
-            string lastFourMilisecondsCreation = CreateDate.Millisecond.ToString().Substring(3, 4);
+            int lengthMili = CreateDate.TimeOfDay.TotalMilliseconds.ToString().Length;
+            string lastFourMilisecondsCreation = CreateDate
+                                                    .TimeOfDay
+                                                        .TotalMilliseconds
+                                                            .ToString()
+                                                                .Substring(lengthMili - 3, 3);
 
-            string automaticSystemCode = secondDataGuid + firstLetterShift + shortYear + lastFourMilisecondsCreation;
+            string automaticSystemCode = (firstLetterShift + shortYear + secondDataGuid + lastFourMilisecondsCreation).ToUpper();
 
             SchoolClassCode = automaticSystemCode;
         }

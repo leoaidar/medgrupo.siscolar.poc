@@ -9,10 +9,10 @@ namespace Medgrupo.Siscolar.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<SchoolClass> builder)
         {
-            builder.ToTable("SchoolClassClass");
+            builder.ToTable("SchoolClass");
             builder.Property(x => x.Id).IsRequired();
             builder.Property(x => x.Name).HasMaxLength(160).HasColumnType("varchar(255)");
-            builder.Property(x => x.SchoolClassCode).IsRequired().HasMaxLength(10).HasColumnType("varchar(10)");
+            builder.Property(x => x.SchoolClassCode).IsRequired().HasMaxLength(20).HasColumnType("varchar(20)");
             builder.Property(x => x.SchoolYear).IsRequired().HasMaxLength(4);
             builder.Property(x => x.Shift).IsRequired().HasMaxLength(50).HasColumnType("varchar(50)");
             builder.Property(x => x.CreateDate).IsRequired().HasDefaultValueSql("GetDate()");
