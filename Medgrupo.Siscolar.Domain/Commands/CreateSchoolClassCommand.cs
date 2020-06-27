@@ -20,7 +20,7 @@ namespace Medgrupo.Siscolar.Domain.Commands
         public string Name { get; set; }
         public int SchoolYear { get; set; }
         public string Shift { get; set; }
-        public Guid SchoolId { get; private set; }
+        public Guid SchoolId { get; set; }
 
 
         public void Validate()
