@@ -37,9 +37,11 @@ namespace Medgrupo.Siscolar.Api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MedGrupo Siscolar ", Version = "v1" });
             });
 
+            //Handlers
             services.AddTransient<SchoolHandler, SchoolHandler>();
             //Data
             services.AddTransient<ISchoolRepository, SchoolRepository>();
+            services.AddTransient<ISchoolClassRepository, SchoolClassRepository>();
             services.AddTransient<SiscolarDbContext>();
         }
 
@@ -53,7 +55,7 @@ namespace Medgrupo.Siscolar.Api
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Transfer Microservice V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Siscolar V1");
             });
 
             app.UseRouting();
