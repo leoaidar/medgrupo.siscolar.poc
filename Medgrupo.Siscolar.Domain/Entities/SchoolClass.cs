@@ -42,7 +42,7 @@ namespace Medgrupo.Siscolar.Domain.Entities
             LastUpdateDate = DateTime.Now;
         }
 
-        public void SetMaximumSchoolClass(int schoolYear)
+        public void ChangeSchoolYear(int schoolYear)
         {
             if (SchoolYear.Equals(schoolYear)) return;
 

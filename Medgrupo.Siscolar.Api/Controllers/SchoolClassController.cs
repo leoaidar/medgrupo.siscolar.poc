@@ -33,5 +33,34 @@ namespace Medgrupo.Siscolar.Api.Controllers
             return repository.GetById(id);
         }
 
+        [HttpPost]
+        public GenericCommandResult Create(
+            [FromBody] CreateSchoolClassCommand command,
+            [FromServices] SchoolClassHandler handler
+        )
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
+
+        [HttpPut]
+        public GenericCommandResult Update(
+           [FromBody] UpdateSchoolClassCommand command,
+           [FromServices] SchoolClassHandler handler
+        )
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
+        [HttpDelete]
+        public GenericCommandResult Delete(
+           [FromBody] DeleteSchoolClassCommand command,
+           [FromServices] SchoolClassHandler handler
+        )
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
+
     }
 }

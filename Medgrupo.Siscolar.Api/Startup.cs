@@ -34,11 +34,12 @@ namespace Medgrupo.Siscolar.Api
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MedGrupo Siscolar ", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MedGrupo Siscolar OnLine Documentation", Version = "v1" });
             });
 
             //Handlers
             services.AddTransient<SchoolHandler, SchoolHandler>();
+            services.AddTransient<SchoolClassHandler, SchoolClassHandler>();
             //Data
             services.AddTransient<ISchoolRepository, SchoolRepository>();
             services.AddTransient<ISchoolClassRepository, SchoolClassRepository>();
