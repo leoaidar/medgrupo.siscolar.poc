@@ -1,38 +1,65 @@
-
 using System;
 
 namespace Medgrupo.Siscolar.Domain.Entities
 {
     public class SchoolClass : Entity
     {
-        public SchoolClass(string name, string user, DateTime date)
+        public SchoolClass(string name, int schoolYear, string shift)
         {
             Name = name;
-            Done = false;
-            Date = date;
-            User = user;
+            SchoolYear = schoolYear;
+            Shift = shift;
+            CreateDate = LastUpdateDate = DateTime.Now;
+            GenerateSchoolClassCode();
         }
 
         public string Name { get; private set; }
-        public bool Done { get; private set; }
-        public DateTime Date { get; private set; }
-        public string User { get; private set; }
+        public int SchoolYear { get; private set; }
+        public string Shift { get; private set; }
+        public string SchoolClassCode { get; private set; }
+        public DateTime CreateDate { get; private set; }
+        public DateTime LastUpdateDate { get; private set; }
 
-        public int numberStudents { get; set; }
 
-        public void MarkAsDone()
+        public void UpdateName(string name)
         {
-            Done = true;
+            if (Name.Equals(name)) return;
+
+            Name = name;
+            EntityModified();
         }
 
-        public void MarkAsUndone()
+        public void ChangeShift(string shift)
         {
-            Done = false;
+            if (Shift.Equals(shift)) return;
+
+            Shift = shift;
+            EntityModified();
         }
 
-        public void UpdateTitle(string title)
+        public void EntityModified()
         {
-            Name = title;
+            LastUpdateDate = DateTime.Now;
+        }
+
+        public void SetMaximumSchoolClass(int schoolYear)
+        {
+            if (SchoolYear.Equals(schoolYear)) return;
+
+            SchoolYear = schoolYear;
+            EntityModified();
+        }
+
+        private void GenerateSchoolClassCode()
+        {
+            string secondDataGuid = Id.ToString().Split('-')[1];
+            string firstLetterShift = Shift.Substring(0, 1);
+            string schoolYearShort = SchoolYear.ToString().Substring(2, 2);
+            string milisecondsCreation = CreateDate.Millisecond.ToString().Substring(3, 4);
+
+            string automaticSystemCode = secondDataGuid + firstLetterShift + schoolYearShort + milisecondsCreation;
+
+            SchoolClassCode = automaticSystemCode;
         }
     }
 }
