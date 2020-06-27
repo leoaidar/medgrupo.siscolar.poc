@@ -27,10 +27,12 @@ namespace Medgrupo.Siscolar.Api
             services.AddDbContext<SiscolarDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("SiscolarDbConnection"));
-            });            
+            });
 
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
 
             services.AddSwaggerGen(c =>
             {
