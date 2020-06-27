@@ -1,7 +1,5 @@
 using Medgrupo.Siscolar.Domain.Handlers;
 using Medgrupo.Siscolar.Domain.Repositories;
-// using Medgrupo.Siscolar.Infrastructure.Contexts;
-// using Medgrupo.Siscolar.Infrastructure.Repositories;
 using Medgrupo.Siscolar.Infra.Contexts;
 using Medgrupo.Siscolar.Infra.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -23,13 +21,7 @@ namespace Medgrupo.Siscolar.Api
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
-        {
-            
-
-            // services.AddDbContext<SiscolarDbContext>(options =>
-            // {
-            //     options.UseSqlServer(Configuration.GetConnectionString("SiscolarDbConnection"),b=>b.MigrationsAssembly("Medgrupo.Siscolar.Infrastructure"));
-            // });            
+        {           
 
             services.AddDbContext<SiscolarDbContext>(options =>
             {
@@ -43,8 +35,6 @@ namespace Medgrupo.Siscolar.Api
             //Data
             services.AddTransient<ISchoolRepository, SchoolRepository>();
             services.AddTransient<SiscolarDbContext>();
-
-
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
