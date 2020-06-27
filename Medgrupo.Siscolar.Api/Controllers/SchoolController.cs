@@ -51,5 +51,14 @@ namespace Medgrupo.Siscolar.Api.Controllers
             return (GenericCommandResult)handler.Handle(command);
         }
 
+        [Route("{id}")]
+        [HttpGet]
+        public School Get(
+            [FromRoute]Guid id,
+            [FromServices] ISchoolRepository repository)
+        {
+            return repository.GetById(id);
+        }
+
     }
 }
