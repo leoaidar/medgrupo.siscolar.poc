@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medgrupo.Siscolar.Domain", "Medgrupo.Siscolar.Domain\Medgrupo.Siscolar.Domain.csproj", "{E9822B7E-775D-48E6-A17D-B381AB2890B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medgrupo.Siscolar.Domain", "Medgrupo.Siscolar.Domain\Medgrupo.Siscolar.Domain.csproj", "{E9822B7E-775D-48E6-A17D-B381AB2890B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medgrupo.Siscolar.Api", "Medgrupo.Siscolar.Api\Medgrupo.Siscolar.Api.csproj", "{99C209DE-57E1-4F03-9D98-66796DAC8E27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medgrupo.Siscolar.Api", "Medgrupo.Siscolar.Api\Medgrupo.Siscolar.Api.csproj", "{99C209DE-57E1-4F03-9D98-66796DAC8E27}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medgrupo.Siscolar.Tests", "Medgrupo.Siscolar.Tests\Medgrupo.Siscolar.Tests.csproj", "{E47BFF69-431B-486F-ACC3-2E213AE88A89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medgrupo.Siscolar.Infrastructure", "Medgrupo.Siscolar.Infrastructure\Medgrupo.Siscolar.Infrastructure.csproj", "{54B9C1AA-DC0C-4F2A-AC31-769869F94A30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medgrupo.Siscolar.Infrastructure", "Medgrupo.Siscolar.Infrastructure\Medgrupo.Siscolar.Infrastructure.csproj", "{54B9C1AA-DC0C-4F2A-AC31-769869F94A30}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medgrupo.Siscolar.Infra", "Medgrupo.Siscolar.Infra\Medgrupo.Siscolar.Infra.csproj", "{4DC4C4B0-8512-431C-B139-D21A0DE1D24F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E9822B7E-775D-48E6-A17D-B381AB2890B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -72,5 +71,23 @@ Global
 		{54B9C1AA-DC0C-4F2A-AC31-769869F94A30}.Release|x64.Build.0 = Release|Any CPU
 		{54B9C1AA-DC0C-4F2A-AC31-769869F94A30}.Release|x86.ActiveCfg = Release|Any CPU
 		{54B9C1AA-DC0C-4F2A-AC31-769869F94A30}.Release|x86.Build.0 = Release|Any CPU
+		{4DC4C4B0-8512-431C-B139-D21A0DE1D24F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DC4C4B0-8512-431C-B139-D21A0DE1D24F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DC4C4B0-8512-431C-B139-D21A0DE1D24F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4DC4C4B0-8512-431C-B139-D21A0DE1D24F}.Debug|x64.Build.0 = Debug|Any CPU
+		{4DC4C4B0-8512-431C-B139-D21A0DE1D24F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4DC4C4B0-8512-431C-B139-D21A0DE1D24F}.Debug|x86.Build.0 = Debug|Any CPU
+		{4DC4C4B0-8512-431C-B139-D21A0DE1D24F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DC4C4B0-8512-431C-B139-D21A0DE1D24F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DC4C4B0-8512-431C-B139-D21A0DE1D24F}.Release|x64.ActiveCfg = Release|Any CPU
+		{4DC4C4B0-8512-431C-B139-D21A0DE1D24F}.Release|x64.Build.0 = Release|Any CPU
+		{4DC4C4B0-8512-431C-B139-D21A0DE1D24F}.Release|x86.ActiveCfg = Release|Any CPU
+		{4DC4C4B0-8512-431C-B139-D21A0DE1D24F}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DFDBAD7B-E1B7-4806-B1B3-33E4C9D277B0}
 	EndGlobalSection
 EndGlobal

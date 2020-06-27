@@ -1,15 +1,15 @@
 using Medgrupo.Siscolar.Domain.Handlers;
 using Medgrupo.Siscolar.Domain.Repositories;
-using Medgrupo.Siscolar.Infrastructure.Contexts;
-using Medgrupo.Siscolar.Infrastructure.Repositories;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+// using Medgrupo.Siscolar.Infrastructure.Contexts;
+// using Medgrupo.Siscolar.Infrastructure.Repositories;
+using Medgrupo.Siscolar.Infra.Contexts;
+using Medgrupo.Siscolar.Infra.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Medgrupo.Siscolar.Api
 {
@@ -24,32 +24,27 @@ namespace Medgrupo.Siscolar.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            
+
+            // services.AddDbContext<SiscolarDbContext>(options =>
+            // {
+            //     options.UseSqlServer(Configuration.GetConnectionString("SiscolarDbConnection"),b=>b.MigrationsAssembly("Medgrupo.Siscolar.Infrastructure"));
+            // });            
 
             services.AddDbContext<SiscolarDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("SiscolarDbConnection"),b=>b.MigrationsAssembly("Medgrupo.Siscolar.Api"));
+                options.UseSqlServer(Configuration.GetConnectionString("SiscolarDbConnection"));
             });            
 
 
-            services.AddTransient<ISchoolRepository, SchoolRepository>();
+            services.AddControllers();
+            
             services.AddTransient<SchoolHandler, SchoolHandler>();
+            //Data
+            services.AddTransient<ISchoolRepository, SchoolRepository>();
+            services.AddTransient<SiscolarDbContext>();
 
 
-            services
-               .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-               .AddJwtBearer(options =>
-               {
-                   options.Authority = "https://securetoken.google.com/project-1064011784157549102";
-                   options.TokenValidationParameters = new TokenValidationParameters
-                   {
-                       ValidateIssuer = true,
-                       ValidIssuer = "https://securetoken.google.com/project-1064011784157549102",
-                       ValidateAudience = true,
-                       ValidAudience = "project-1064011784157549102",
-                       ValidateLifetime = true
-                   };
-               });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
