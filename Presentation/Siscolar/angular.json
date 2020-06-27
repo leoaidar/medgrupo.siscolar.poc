@@ -145,6 +145,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Siscolar"
+    }
+  },
+  "defaultProject": "Siscolar",
+  "cli": {
+    "analytics": "4128dfa8-115a-4caa-ac33-fa701eec5a3c"
+  }
 }
