@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace Medgrupo.Siscolar.Api
 {
@@ -30,7 +31,12 @@ namespace Medgrupo.Siscolar.Api
 
 
             services.AddControllers();
-            
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MedGrupo Siscolar ", Version = "v1" });
+            });
+
             services.AddTransient<SchoolHandler, SchoolHandler>();
             //Data
             services.AddTransient<ISchoolRepository, SchoolRepository>();
@@ -43,6 +49,12 @@ namespace Medgrupo.Siscolar.Api
                 app.UseDeveloperExceptionPage();
 
             app.UseHttpsRedirection();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Transfer Microservice V1");
+            });
 
             app.UseRouting();
             app.UseCors(x => x
