@@ -23,7 +23,7 @@ export class SchoolService {
   }
 
   getById(id: string): Observable<School> {
-    const url = '${this.apiPath}/${id}';
+    const url = `${this.apiPath}/${id}`;
 
     return this.http.get(url).pipe(
       catchError(this.handleError),
@@ -40,7 +40,7 @@ export class SchoolService {
   }
 
   update(school: School): Observable<School> {
-    const url = '${this.apiPath}/${school.id}';
+    const url = `${this.apiPath}/${school.id}`;
 
     return this.http.put(url, school).pipe(
       catchError(this.handleError),
@@ -49,7 +49,7 @@ export class SchoolService {
   }
 
   delete(id: string): Observable<any> {
-    const url = '${this.apiPath}/${id}';
+    const url = `${this.apiPath}/${id}`;
 
     return this.http.delete(url).pipe(
       catchError(this.handleError),
