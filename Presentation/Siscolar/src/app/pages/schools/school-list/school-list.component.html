@@ -7,34 +7,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr *ngFor="let school of schools">
         <td>
-          <strong>Escola Joao</strong><br>
-          <small>Sr Aidar, 300 Alunos</small>
+          <strong>{{school.name}}</strong><br>
+            <small>Diretor: {{school.schoolPrincipal}}, Capacidade: {{school.maxSchoolClass}} turmas e {{school.maxSchoolStudents}} alunos. </small>
         </td>
         <td>
-          <a [routerLink]="[1, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-          <a (click)="clickFunction('Excluir')" class="btn btn-outline-danger btn-sm">Excluir</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>Escola Joao</strong><br>
-          <small>Sr Aidar, 300 Alunos</small>
-        </td>
-        <td>
-          <a [routerLink]="[1, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-          <a (click)="clickFunction('Excluir')" class="btn btn-outline-danger btn-sm">Excluir</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>Escola Joao</strong><br>
-          <small>Sr Aidar, 300 Alunos</small>
-        </td>
-        <td>
-          <a [routerLink]="[1, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-          <a (click)="clickFunction('Excluir')" class="btn btn-outline-danger btn-sm">Excluir</a>
+          <a [routerLink]="[school.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
+          <button (click)="deleteSchool(school)" class="btn btn-outline-danger btn-sm">Excluir</button>
         </td>
       </tr>            
     </tbody>
