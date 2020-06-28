@@ -7,7 +7,7 @@
         <a routerLink="/schools">Escolas</a>
       </li>
       <li class="breadcrumb-item">
-        <a routerLink="/" active>Formulario de Escola</a>
+        <a routerLink="/" active>{{pageTitle}}</a>
       </li>
     </ol>
   </nav>
@@ -16,7 +16,7 @@
 <div class="row mb-4">
     <div class="col-md">
       <h1 class="h2 border-left pl-2">
-        Formulario da Escola {{currentAction}}
+        {{pageTitle}}
       </h1>
     </div>
     <div class="col-md text-right">
@@ -26,7 +26,7 @@
     </div>  
   </div>
 
-<form [formGroup]="schoolForm">
+<form [formGroup]="schoolForm" (submit)="submitForm()">
 
     <div class="card">
       <div class="card-header">
@@ -35,35 +35,49 @@
   
       <div class="card-body">
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-8">
             <label for="name">Nome</label>
             <input type="text" class="form-control" id="name" formControlName="name">
+
+            <div class="text-danger" *ngIf="schoolForm.get('name').invalid && schoolForm.get('name').touched">
+              <div *ngIf="schoolForm.get('name').errors?.required">dado obrigatório</div>
+              <div *ngIf="schoolForm.get('name').errors?.minlength">mínimo 6 caracteres</div>
+              <div></div>
+            </div>
   
           </div>
   
-          <div class="form-group col-md-8">
+          <div class="form-group col-md-4">
             <label for="schoolPrincipal">Diretor</label>
             <input type="text" class="form-control" id="schoolPrincipal" formControlName="schoolPrincipal">
+
+            <div class="text-danger" *ngIf="schoolForm.get('schoolPrincipal').invalid && schoolForm.get('schoolPrincipal').touched"> 
+              <div *ngIf="schoolForm.get('schoolPrincipal').errors?.required">dado obrigatório</div>
+              <div *ngIf="schoolForm.get('schoolPrincipal').errors?.minlength">mínimo 3 caracteres</div>
+              <div></div>
+            </div>            
           </div>          
         </div>
       </div>
       <div class="card-body">
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-6">
             <label for="maxSchoolClass">Máximo de Turmas</label>
-            <input type="text" class="form-control" id="maxSchoolClass" formControlName="maxSchoolClass">
+            <input type="text" class="form-control" id="maxSchoolClass" formControlName="maxSchoolClass" type="number" min="0" value="{{0}}">
   
           </div>
   
-          <div class="form-group col-md-8">
+          <div class="form-group col-md-6">
             <label for="maxSchoolStudents">Máximo de Alunos</label>
-            <input type="text" class="form-control" id="maxSchoolStudents" formControlName="maxSchoolStudents">
+            <input type="text" class="form-control" id="maxSchoolStudents" formControlName="maxSchoolStudents" min="0" type="number" value="{{0}}">
           </div>          
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-lg float-right mt-3">
+      <button [disabled]="submittingForm || schoolForm.invalid" type="submit" class="btn btn-primary btn-lg float-right mt-3">
         Salvar
       </button>      
 
     </div>
+
+</form>
