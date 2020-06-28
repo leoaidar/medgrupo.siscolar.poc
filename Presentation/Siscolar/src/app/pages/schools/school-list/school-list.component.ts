@@ -12,4 +12,8 @@ export class SchoolListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  clickFunction(txt) {
+    alert(txt);
+  }
+
 }
