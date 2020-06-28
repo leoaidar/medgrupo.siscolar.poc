@@ -4,25 +4,25 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError, flatMap } from 'rxjs/operators';
 
-import { School } from './school-model';
+import { SchoolClass } from './schoolclass-model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SchoolService {
+export class SchoolClassService {
 
-  private apiPath = 'api/schools';
+  private apiPath = 'api/schoolclasses';
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<School[]> {
+  getAll(): Observable<SchoolClass[]> {
     return this.http.get(this.apiPath).pipe(
       catchError(this.handleError),
       map(this.jsonDataToSchools)
     );
   }
 
-  getById(id: string): Observable<School> {
+  getById(id: string): Observable<SchoolClass> {
     const url = `${this.apiPath}/${id}`;
 
     return this.http.get(url).pipe(
@@ -32,11 +32,11 @@ export class SchoolService {
   }
 
 
-  create(school: School): Observable<School> {
+  create(schoolclass: SchoolClass): Observable<SchoolClass> {
     const newGuid = Math.random().toString(36).substring(2) + Date.now().toString(36);
-    school.id = newGuid;
+    schoolclass.id = newGuid;
     console.log(newGuid);
-    return this.http.post(this.apiPath, school).pipe(
+    return this.http.post(this.apiPath, schoolclass).pipe(
       catchError(this.handleError),
       map(this.jsonDataToSchool)
     );
@@ -48,12 +48,12 @@ export class SchoolService {
 
   }
 
-  update(school: School): Observable<School> {
-    const url = `${this.apiPath}/${school.id}`;
+  update(schoolclass: SchoolClass): Observable<SchoolClass> {
+    const url = `${this.apiPath}/${schoolclass.id}`;
 
-    return this.http.put(url, school).pipe(
+    return this.http.put(url, schoolclass).pipe(
       catchError(this.handleError),
-      map(() => school)
+      map(() => schoolclass)
     );
   }
 
@@ -66,14 +66,14 @@ export class SchoolService {
     );
   }
 
-  private jsonDataToSchools(jsonData: any[]): School[] {
-    const schools: School[] = [];
-    jsonData.forEach(element => schools.push(element as School));
-    return schools;
+  private jsonDataToSchools(jsonData: any[]): SchoolClass[] {
+    const schoolclasses: SchoolClass[] = [];
+    jsonData.forEach(element => schoolclasses.push(element as SchoolClass));
+    return schoolclasses;
   }
 
-  private jsonDataToSchool(jsonData: any): School {
-    return jsonData as School;
+  private jsonDataToSchool(jsonData: any): SchoolClass {
+    return jsonData as SchoolClass;
   }
 
   private handleError(error: any): Observable<any>{

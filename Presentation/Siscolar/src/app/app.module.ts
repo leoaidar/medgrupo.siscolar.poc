@@ -12,7 +12,7 @@ import { InMemoryDatabase } from './in-memory-database';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     CoreModule,
