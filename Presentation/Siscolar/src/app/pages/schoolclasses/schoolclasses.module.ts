@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SchoolclassesRoutingModule } from './schoolclasses-routing.module';
+import { SchoolClassesRoutingModule } from './schoolclasses-routing.module';
 import { SchoolclassListComponent } from './schoolclass-list/schoolclass-list.component';
 import { SchoolclassFormComponent } from './schoolclass-form/schoolclass-form.component';
 
@@ -10,7 +10,9 @@ import { SchoolclassFormComponent } from './schoolclass-form/schoolclass-form.co
   declarations: [SchoolclassListComponent, SchoolclassFormComponent],
   imports: [
     CommonModule,
-    SchoolclassesRoutingModule
+    SchoolClassesRoutingModule,
+    SchoolclassListComponent,
+    SchoolclassFormComponent
   ]
 })
 export class SchoolclassesModule { }

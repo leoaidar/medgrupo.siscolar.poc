@@ -1,5 +1,3 @@
-import { School } from '../../schools/shared/school-model';
-
 export class SchoolClass{
     constructor(
         public id?: string,
@@ -7,14 +5,6 @@ export class SchoolClass{
         public shift?: string,
         public schoolYear?: number,
         public schoolClassCode?: string,
-        public schoolId?: string,
-        public school?: School
+        public schoolId?: string
     ){}
-
-    static shifts = {
-        morning: 'Matutino',
-        evening: 'Vespertino',
-        night: 'Noturno',
-        daytime: 'Diurno'
-    };
 }
