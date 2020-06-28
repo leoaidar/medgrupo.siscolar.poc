@@ -72,11 +72,20 @@
             <input type="text" class="form-control" id="maxSchoolStudents" formControlName="maxSchoolStudents" min="0" type="number" value="{{0}}">
           </div>          
         </div>
-      </div>
+      </div>  
+
 
       <button [disabled]="submittingForm || schoolForm.invalid" type="submit" class="btn btn-primary btn-lg float-right mt-3">
         Salvar
       </button>      
+
+          
+      <div class="alert alert-danger mt-4" *ngIf="serverErrorMessages">
+        <strong>Erro no servidor:</strong>
+        <ul>
+          <li *ngFor="let error of serverErrorMessages">{{error}}</li>
+        </ul>
+      </div> 
 
     </div>
 

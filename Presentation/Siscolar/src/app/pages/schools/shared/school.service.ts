@@ -36,7 +36,6 @@ export class SchoolService {
     const newGuid = Math.random().toString(36).substring(2) + Date.now().toString(36);
     school.id = newGuid;
     console.log(newGuid);
-
     return this.http.post(this.apiPath, school).pipe(
       catchError(this.handleError),
       map(this.jsonDataToSchool)
