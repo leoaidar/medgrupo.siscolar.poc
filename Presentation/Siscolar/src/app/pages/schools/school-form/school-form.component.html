@@ -1,1 +1,69 @@
-<p>school-form works!</p>
+<nav class="mb-5">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a routerLink="/schools">Escolas</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a routerLink="/" active>Formulario de Escola</a>
+      </li>
+    </ol>
+  </nav>
+
+  
+<div class="row mb-4">
+    <div class="col-md">
+      <h1 class="h2 border-left pl-2">
+        Formulario da Escola
+      </h1>
+    </div>
+    <div class="col-md text-right">
+      <a routerLink="/schools" class="btn btn-success float-right">
+        << Voltar
+      </a>
+    </div>  
+  </div>
+
+<form>
+
+    <div class="card">
+      <div class="card-header">
+        Informações sobre a escola
+      </div>
+  
+      <div class="card-body">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" formControlName="name">
+  
+          </div>
+  
+          <div class="form-group col-md-8">
+            <label for="description">Diretor</label>
+            <input type="text" class="form-control" id="description" formControlName="description">
+          </div>          
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="name">Máximo de Turmas</label>
+            <input type="text" class="form-control" id="name" formControlName="name">
+  
+          </div>
+  
+          <div class="form-group col-md-8">
+            <label for="description">Máximo de Alunos</label>
+            <input type="text" class="form-control" id="description" formControlName="description">
+          </div>          
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg float-right mt-3">
+        Salvar
+      </button>      
+
+    </div>
