@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medgrupo.Siscolar.Domain", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medgrupo.Siscolar.Api", "Medgrupo.Siscolar.Api\Medgrupo.Siscolar.Api.csproj", "{99C209DE-57E1-4F03-9D98-66796DAC8E27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medgrupo.Siscolar.Tests", "Medgrupo.Siscolar.Tests\Medgrupo.Siscolar.Tests.csproj", "{E47BFF69-431B-486F-ACC3-2E213AE88A89}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medgrupo.Siscolar.Infra", "Medgrupo.Siscolar.Infra\Medgrupo.Siscolar.Infra.csproj", "{4DC4C4B0-8512-431C-B139-D21A0DE1D24F}"
 EndProject
 Global
