@@ -26,7 +26,7 @@ open the browser and type:
   https://localhost:5010/swagger/index.html
 
 
-Run Anglular App
+Run Angular Hotsite
 
 cd medgrupo.siscolar.poc/Presentation/angular-siscolar-medgrupo/
 
