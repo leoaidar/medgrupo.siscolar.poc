@@ -8,7 +8,11 @@ Node: 12+
 Angular: 10.0.1
 Node v12+
 Dotnet Core v3.1
-SqlServer set differrent password in webconfig
+
+SqlServer set differrent password in appsettings.Development.json | appsettings.Development.json
+  "ConnectionStrings": {
+    "SiscolarDbConnection":"..."
+  }
 
 git clone https://github.com/leoaidar/medgrupo.siscolar.poc.git
 
