@@ -36,6 +36,8 @@ Run Angular Hotsite
 
 cd medgrupo.siscolar.poc/Presentation/angular-siscolar-medgrupo/
 
+npm install
+
 ng serve
 
 open the browser and type: 
