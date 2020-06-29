@@ -25,8 +25,10 @@ cd medgrupo.siscolar.poc/Medgrupo.Siscolar.Api/
 dotnet run
 
 open the browser and type: 
+  http://localhost:5000/swagger/index.html
   http://localhost:5011/swagger/index.html
   OR
+  https://localhost:5001/swagger/index.html
   https://localhost:5010/swagger/index.html
 
 
