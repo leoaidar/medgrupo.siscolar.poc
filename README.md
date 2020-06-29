@@ -8,7 +8,11 @@ Node: 12+
 Angular: 10.0.1
 Node v12+
 Dotnet Core v3.1
-SqlServer set differrent password in webconfig
+
+SqlServer set differrent password in appsettings.Development.json | appsettings.Development.json
+  "ConnectionStrings": {
+    "SiscolarDbConnection":"..."
+  }
 
 git clone https://github.com/leoaidar/medgrupo.siscolar.poc.git
 
@@ -26,7 +30,7 @@ open the browser and type:
   https://localhost:5010/swagger/index.html
 
 
-Run Anglular App
+Run Angular Hotsite
 
 cd medgrupo.siscolar.poc/Presentation/angular-siscolar-medgrupo/
 
