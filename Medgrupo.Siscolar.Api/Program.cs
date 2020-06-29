@@ -14,7 +14,7 @@ namespace Medgrupo.Siscolar.Api
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>().UseUrls("http://*:5011");
                 });
     }
 }
